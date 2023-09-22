@@ -4,9 +4,6 @@ from django.db import models
 class Fen(models.Model):
     # position_id = models.IntegerField(null=False, blank=True)
     fen = models.TextField(blank=True, null=False)
-    user = models.CharField(max_length=50, null=True, blank=False)
-    debiut_name = models.CharField(max_length=255, blank=False, null=True)
-
     added = models.DateTimeField(null=False)
 
     class Meta:
