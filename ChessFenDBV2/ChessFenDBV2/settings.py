@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
     'database.apps.DatabaseConfig',
     'main.apps.MainConfig',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
