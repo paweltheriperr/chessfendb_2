@@ -1,0 +1,24 @@
+<!-- inny_szablon.html -->
+{% extends 'main.html' %}
+
+{% block content %}
+    <h2>PUZZLE CHESS FEN!</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper neque nec purus laoreet,</p>
+<div id="board1" style="width: 400px"></div>
+    <div>
+        <form method="GET">
+            {% csrf_token %}
+            <label for="input-chess-fen">FEN:</label>
+            <input type="text" id="input-chess-fen" name="chess-fen" placeholder="Wpisz FEN" pattern="^([rnbqkpRNBQKP1-8]+\/){7}[rnbqkpRNBQKP1-8]+ [wb] (-|[KQkq]+) (-|[a-h][36]) \d+ \d+$" required>
+            <button id="send-fen-btn" class="btn">Wyślij FEN</button>
+        </form>
+    </div>
+
+    {% if success_message %}
+        <p>{{ success_message }}</p>
+    {% endif %}
+
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+{% endblock %}
