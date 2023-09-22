@@ -3,14 +3,18 @@ from django.http import Http404
 
 from .models import Fen
 from .serializers import FenSerializer
-
+from django.shortcuts import get_object_or_404
+# biblioteka do errorów
 from rest_framework import generics
 
 
 def index(request):
-    yes = Fen.objects.all()
-    return HttpResponse('<h1>Siur</h1>')
+    try:
+        fen = get_object_or_404(Fen)  # Spróbuj pobrać obiekt Fen
+    except Fen.DoesNotExist:
+        fen = None  # Jeśli nie ma obiektu Fen, ustaw fen na None
 
+    return render(request, 'index.html', {'fen': fen})
 
 class FenList(generics.ListCreateAPIView):
     queryset = Fen.objects.all()
