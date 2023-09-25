@@ -4,15 +4,26 @@ from django.http import Http404
 from .models import Fen
 from .serializers import FenSerializer
 from django.shortcuts import get_object_or_404
-# biblioteka do errorów
+
 from rest_framework import generics
+
+from datetime import datetime
 
 
 def index(request):
+    if request.method == 'POST':
+        data = {
+            'fen': request.POST['chess-fen'],
+            'added': datetime.now(),
+        }
+
+        FenSerializer().create(data)
+
     try:
-        fen = get_object_or_404(Fen)  # Spróbuj pobrać obiekt Fen
+        fen = Fen.objects.latest('pk')
+
     except Fen.DoesNotExist:
-        fen = None  # Jeśli nie ma obiektu Fen, ustaw fen na None
+        fen = None
 
     return render(request, 'main/main.html', {'fen': fen})
 
