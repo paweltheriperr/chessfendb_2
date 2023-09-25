@@ -82,14 +82,14 @@ WSGI_APPLICATION = 'ChessFenDBV2.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-   # 'default': {
-   #     'ENGINE': 'django.db.backends.mysql',
-   #     'NAME': 'fen',
-   #     'USER': 'root',
-   #     'PASSWORD': 'root',
-   #     'HOST': '0.0.0.0',
-   #     'PORT': 3306,
-   # }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fen',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '0.0.0.0',
+        'PORT': 3306,
+    }
 }
 
 #DATABASES = {

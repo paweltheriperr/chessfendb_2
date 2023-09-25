@@ -1,33 +1,33 @@
-<!-- main.html -->
-<html>
-<head>
-    <title>PUZZLECHESSFENDB</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
-        crossorigin="anonymous"></script>
+{% extends 'main.html' %}
 
-<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
-        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
-      integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
-      crossorigin="anonymous">
-</head>
-<body>
-    <header>
-        <h1>PUZZLE CHESS FEN DB</h1>
-    </header>
-    <nav>
-        <a href="#">Strona główna</a>
-        <a href="#">Dzienne zadania</a>
-        <a href="#">Instrukcjia obsługi</a>
-        <a href="https://github.com/paweltheriperr/chessfendb_2">O projektcie</a>
-    </nav>
-    <main>
-        <div id="container">
-        </div>
-    </main>
-</body>
-</html>
+{% block content %}
+    <div id="main">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+            crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+            integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet"
+          href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+          integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+          crossorigin="anonymous">
+
+
+        <header>
+            <h1>PUZZLE CHESS FEN DB</h1>
+        </header>
+        <nav>
+            <a href="#">Strona główna</a>
+            <a href="#">Dzienne zadania</a>
+            <a href="#">Instrukcjia obsługi</a>
+            <a href="https://github.com/paweltheriperr/chessfendb_2">O projektcie</a>
+        </nav>
+        <main>
+            <div id="container">
+
+            </div>
+        </main>
+    </div>
+{% endblock content %}

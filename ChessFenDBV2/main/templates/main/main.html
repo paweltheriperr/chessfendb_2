@@ -17,8 +17,10 @@
     </div>
  {% if fen %}
     <!-- Jeśli istnieje obiekt Fen w bazie danych -->
-    <p>Twój FEN: {{ fen }}</p>
+    <p>Twój FEN: {{ fen.fen }}</p>
     {% else %}
     <!-- Jeśli nie ma obiektu Fen w bazie danych -->
     <p>Nie znaleziono FEN w bazie danych.</p>
     {% endif %}
+
+{% endblock %}

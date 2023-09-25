@@ -14,7 +14,8 @@ def index(request):
     except Fen.DoesNotExist:
         fen = None  # Jeśli nie ma obiektu Fen, ustaw fen na None
 
-    return render(request, 'index.html', {'fen': fen})
+    return render(request, 'main/main.html', {'fen': fen})
+
 
 class FenList(generics.ListCreateAPIView):
     queryset = Fen.objects.all()
